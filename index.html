@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKHTER PREMIUM | متجر العطور الفاخرة</title>
+    <style>
+        /* تعريف الهوية البصرية - الألوان الفخمة */
+        :root {
+            --bg-color: #050505; /* أسود ملكي */
+            --card-bg: linear-gradient(145deg, #15202b, #0a0a0a); /* تدرج رخامي ليلي */
+            --gold: #c5a059; /* ذهبي مطفي */
+            --text-main: #ffffff;
+            --text-dim: #888888;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 200;
+            letter-spacing: 8px;
+            color: var(--gold);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
+        /* شبكة المنتجات الاحترافية */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* تصميم بطاقة العطر */
+        .perfume-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+        }
+
+        /* تنسيق صورة الـ PNG مع تأثير الظل */
+        .perfume-img {
+            width: 100%;
+            height: 320px;
+            object-fit: contain;
+            /* تأثير الظل ليعطي عمقاً لزجاجة العطر */
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.9));
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            margin-bottom: 25px;
+        }
+
+        .perfume-card:hover .perfume-img {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .brand-label {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .perfume-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+        }
+
+        /* زر الشراء العصري */
+        .order-button {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-main);
+            padding: 12px 40px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+        }
+
+        .order-button:hover {
+            background-color: var(--text-main);
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AKHTER PREMIUM</h1>
+
+    <div class="products-grid">
+        
+        <div class="perfume-card">
+            <span class="brand-label">PRIVATE COLLECTION</span>
+            <img src="perfume.png" alt="Perfume Noir" class="perfume-img">
+            <h2 class="perfume-title">أومبريه نوار</h2>
+            <p class="price-tag">450 ر.س</p>
+            <button class="order-button">اطلب الآن</button>
+        </div>
+
+        <div class="perfume-card">
+            <span class="brand-label">ROYAL LINE</span>
+            <img src="perfume.png" alt="Perfume Blue" class="perfume-img">
+            <h2 class="perfume-title">بلو سافير</h2>
+            <p class="price-tag">520 ر.س</p>
+            <button class="order-button">اطلب الآن</button>
+        </div>
+
+        <div class="perfume-card">
+            <span class="brand-label">DESERT LUXE</span>
+            <img src="perfume.png" alt="Perfume Oud" class="perfume-img">
+            <h2 class="perfume-title">عود سيليست</h2>
+            <p class="price-tag">600 ر.س</p>
+            <button class="order-button">اطلب الآن</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 AKHTER PREMIUM | @akhter_x1</p>
+    </footer>
+
+</body>
+</html>
