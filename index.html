@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head> <meta name="description" content="AKHTER PREMIUM - أرقى العطور العالمية في اليمن">
-<meta property="og:title" content="AKHTER PREMIUM | متجر العطور الفاخرة">
-<meta property="og:description" content="اكتشف مجموعتنا الحصرية من العطور السينمائية. اطلب الآن عبر الواتساب.">
-<meta property="og:image" content="perfume.png">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKHTER PREMIUM | متجر العطور الفاخرة</title> <link rel="icon" type="image/png" href="favicon.png.png">
+    <title>AKHTER PREMIUM | متجر العطور الفاخرة</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=1">
+    
     <style>
         :root {
             --bg-color: #050505;
@@ -24,26 +23,32 @@
             padding: 50px 20px;
         }
 
-        /* رأس الصفحة والسلة */
         .header-container {
             text-align: center;
             margin-bottom: 60px;
-            position: relative;
         }
 
-        .cart-icon {
-            font-size: 1.5rem;
+        /* تنسيق السلة مع العداد */
+        .cart-container {
+            font-size: 1.2rem;
             color: var(--gold);
-            cursor: pointer;
-            margin-bottom: 10px;
-            display: block;
+            margin-bottom: 15px;
+            display: inline-block;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+            border-radius: 50px;
+        }
+
+        #cart-count {
+            font-weight: bold;
+            margin-right: 5px;
         }
 
         h1 {
             font-weight: 200;
             letter-spacing: 8px;
             color: var(--gold);
-            margin: 0;
+            margin: 10px 0;
             text-transform: uppercase;
         }
 
@@ -70,6 +75,7 @@
             box-shadow: 0 15px 50px rgba(0,0,0,0.8);
         }
 
+        /* تعديل اسم الصورة في الكود كما طلبت */
         .perfume-img {
             width: 100%;
             height: 320px;
@@ -98,7 +104,6 @@
             margin-bottom: 30px;
         }
 
-        /* زر التواصل عبر الواتساب */
         .order-button {
             display: inline-block;
             text-decoration: none;
@@ -113,10 +118,9 @@
         }
 
         .order-button:hover {
-            background-color: #25d366; /* لون الواتساب عند التمرير */
+            background-color: #25d366;
             border-color: #25d366;
             color: #fff;
-            font-weight: bold;
         }
 
         footer {
@@ -130,7 +134,9 @@
 <body>
 
     <div class="header-container">
-        <div class="cart-icon">🛒 السلة</div>
+        <div class="cart-container">
+            🛒 السلة: <span id="cart-count">0</span>
+        </div>
         <h1>AKHTER PREMIUM</h1>
     </div>
 
@@ -141,7 +147,7 @@
             <img src="perfume.png.png" alt="Perfume 1" class="perfume-img">
             <h2 class="perfume-title">أومبريه نوار</h2>
             <p class="price-tag">25,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر أومبريه نوار" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر أومبريه نوار" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
         <div class="perfume-card">
@@ -149,7 +155,7 @@
             <img src="perfume.png.png" alt="Perfume 2" class="perfume-img">
             <h2 class="perfume-title">بلو سافير</h2>
             <p class="price-tag">30,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر بلو سافير" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر بلو سافير" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
         <div class="perfume-card">
@@ -157,14 +163,23 @@
             <img src="perfume.png.png" alt="Perfume 3" class="perfume-img">
             <h2 class="perfume-title">عود سيليست</h2>
             <p class="price-tag">35,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر عود سيليست" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر عود سيليست" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 AKHTER PREMIUM | صنع بشغف لـ @akhter_x1</p>
+        <p>© 2026 AKHTER PREMIUM | @akhter_x1</p>
     </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+            alert("تمت إضافة العطر إلى السلة! سيتم توجيهك الآن للواتساب لإتمام الطلب.");
+        }
+    </script>
 
 </body>
 </html>
