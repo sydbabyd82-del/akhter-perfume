@@ -36,7 +36,6 @@
             border: 1px solid var(--gold);
             padding: 8px 20px;
             border-radius: 50px;
-            letter-spacing: 1px;
         }
 
         h1 {
@@ -44,7 +43,6 @@
             font-size: 2.5rem;
             color: var(--gold);
             margin: 10px 0;
-            text-shadow: 2px 2px 10px rgba(197, 160, 89, 0.2);
         }
 
         .products-grid {
@@ -67,7 +65,6 @@
         .perfume-card:hover {
             transform: translateY(-10px);
             border-color: var(--gold);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
         }
 
         .perfume-img {
@@ -109,7 +106,6 @@
             background-color: #25d366;
             border-color: #25d366;
             color: #fff;
-            transform: scale(1.05);
         }
 
         footer {
@@ -126,40 +122,39 @@
 
     <div class="header-container">
         <div class="cart-container">
-            🛒 سلة المشتريات: <span id="cart-count">0</span>
+            🛒 السلة: <span id="cart-count">0</span>
         </div>
         <h1>متجر القناعة للعطور</h1>
-        <p style="color: var(--text-dim); letter-spacing: 2px;">نخبة العطور العالمية بين يديك</p>
+        <p style="color: var(--text-dim);">أفخم العطور بأفضل الأسعار</p>
     </div>
 
     <div class="products-grid">
         
         <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر القناعة 1" class="perfume-img">
-            <h2 class="perfume-title">أومبريه نوار</h2>
+            <img src="perfume.png.png" alt="عطر شيخ الشيوخ" class="perfume-img">
+            <h2 class="perfume-title">شيخ الشيوخ</h2>
             <p class="price-tag">25,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=السلام عليكم، أريد طلب عطر أومبريه نوار من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر شيخ الشيوخ من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
         <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر القناعة 2" class="perfume-img">
-            <h2 class="perfume-title">بلو سافير</h2>
+            <img src="perfume.png.png" alt="عطر جواهر القناعة" class="perfume-img">
+            <h2 class="perfume-title">جواهر القناعة</h2>
             <p class="price-tag">30,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=السلام عليكم، أريد طلب عطر بلو سافير من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر جواهر القناعة من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
         <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر القناعة 3" class="perfume-img">
-            <h2 class="perfume-title">عود سيليست</h2>
+            <img src="perfume.png.png" alt="عطر سلطان العود" class="perfume-img">
+            <h2 class="perfume-title">سلطان العود</h2>
             <p class="price-tag">35,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=السلام عليكم، أريد طلب عطر عود سيليست من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
+            <a href="https://wa.me/967778149873?text=أريد طلب عطر سلطان العود من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 متجر القناعة للعطور | جميع الحقوق محفوظة</p>
-        <p style="font-size: 0.7rem; color: #444;">التواصل: 778149873</p>
+        <p>© 2026 متجر القناعة للعطور | 778149873</p>
     </footer>
 
     <script>
@@ -167,7 +162,7 @@
         function addToCart() {
             count++;
             document.getElementById('cart-count').innerText = count;
-            alert("تمت إضافة العطر بنجاح! شكراً لثقتك بمتجر القناعة.");
+            alert("تمت إضافة العطر بنجاح!");
         }
     </script>
 
