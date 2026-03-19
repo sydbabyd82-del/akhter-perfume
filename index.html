@@ -3,154 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر القناعة للعطور | فخامة واختيار</title>
+    <title>متجر القناعة للعطور | آراء العملاء</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1">
-    
     <style>
         :root {
-            --bg-color: #050505;
-            --card-bg: linear-gradient(145deg, #15202b, #0a0a0a);
-            --gold: #c5a059;
-            --text-main: #ffffff;
-            --text-dim: #888888;
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-gray: #b5b5b5;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            padding: 50px 20px;
+            overflow-x: hidden;
         }
 
-        .header-container {
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); }
+        .cart-status { background: var(--gold); color: black; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+
+        .hero {
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
         }
 
-        .cart-container {
-            font-size: 1.1rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-            display: inline-block;
-            border: 1px solid var(--gold);
-            padding: 8px 20px;
-            border-radius: 50px;
-        }
+        .container { padding: 60px 5%; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--gold); font-size: 2rem; }
 
-        h1 {
-            font-weight: 300;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin: 10px 0;
-        }
+        /* تنسيق المنتجات */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: var(--card-bg); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #1a1a1a; }
+        .product-card img { width: 100%; height: 250px; object-fit: contain; margin-bottom: 15px; }
+        .product-price { color: var(--gold); font-weight: bold; margin-bottom: 15px; }
+        .whatsapp-btn { display: block; border: 1px solid var(--gold); color: white; padding: 10px; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+        .whatsapp-btn:hover { background: var(--gold); color: black; }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        /* قسم آراء العملاء الجديد */
+        .testimonials-section { background: #0f0f0f; padding: 80px 5%; border-top: 1px solid #222; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .testimonial-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-right: 4px solid var(--gold); }
+        .stars { color: var(--gold); margin-bottom: 10px; font-size: 1.2rem; }
+        .client-name { display: block; margin-top: 15px; font-weight: bold; color: var(--gold); }
+        .client-comment { color: var(--text-gray); font-style: italic; font-size: 0.95rem; line-height: 1.6; }
 
-        .perfume-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            padding: 35px;
-            text-align: center;
-            transition: all 0.5s ease;
-        }
-
-        .perfume-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-        }
-
-        .perfume-img {
-            width: 100%;
-            height: 320px;
-            object-fit: contain;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.9));
-            margin-bottom: 25px;
-        }
-
-        .perfume-title {
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin: 10px 0;
-            color: #fff;
-        }
-
-        .price-tag {
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-
-        .order-button {
-            display: inline-block;
-            text-decoration: none;
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--gold);
-            padding: 12px 40px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-
-        .order-button:hover {
-            background-color: #25d366;
-            border-color: #25d366;
-            color: #fff;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 100px;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            border-top: 1px solid #1a1a1a;
-            padding-top: 30px;
-        }
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: var(--text-gray); }
     </style>
 </head>
 <body>
 
-    <div class="header-container">
-        <div class="cart-container">
-            🛒 السلة: <span id="cart-count">0</span>
-        </div>
+    <header>
+        <div class="logo">متجر القناعة</div>
+        <div class="cart-status">🛒 السلة: <span id="count">0</span></div>
+    </header>
+
+    <div class="hero">
         <h1>متجر القناعة للعطور</h1>
-        <p style="color: var(--text-dim);">أفخم العطور بأفضل الأسعار</p>
+        <p>فخامة العطر.. وقناعة السعر</p>
     </div>
 
-    <div class="products-grid">
-        
-        <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر شيخ الشيوخ" class="perfume-img">
-            <h2 class="perfume-title">شيخ الشيوخ</h2>
-            <p class="price-tag">25,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر شيخ الشيوخ من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
+    <div class="container">
+        <h2 class="section-title">عطورنا المختارة</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="perfume.png.png" alt="شيخ الشيوخ">
+                <h3>شيخ الشيوخ</h3>
+                <p class="product-price">25,000 ر.ي</p>
+                <a href="https://wa.me/967778149873?text=طلب عطر شيخ الشيوخ" onclick="add()" class="whatsapp-btn">اطلب عبر واتساب</a>
+            </div>
+            <div class="product-card">
+                <img src="perfume.png.png" alt="جواهر القناعة">
+                <h3>جواهر القناعة</h3>
+                <p class="product-price">30,000 ر.ي</p>
+                <a href="https://wa.me/967778149873?text=طلب عطر جواهر القناعة" onclick="add()" class="whatsapp-btn">اطلب عبر واتساب</a>
+            </div>
         </div>
+    </div>
 
-        <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر جواهر القناعة" class="perfume-img">
-            <h2 class="perfume-title">جواهر القناعة</h2>
-            <p class="price-tag">30,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر جواهر القناعة من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
+    <div class="testimonials-section">
+        <h2 class="section-title">قالوا عن متجر القناعة</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="client-comment">"بصراحة عطر شيخ الشيوخ قمة في الفخامة والثبات، والتوصيل كان سريع جداً في صنعاء. أنصح بالتعامل معهم."</p>
+                <span class="client-name">- أبو محمد</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="client-comment">"أفضل ما في متجر القناعة هو الصدق في التعامل، العطور وصلتني مغلفة بشكل ممتاز والروائح فواحة جداً."</p>
+                <span class="client-name">- خالد اليافعي</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="client-comment">"جربت عطر جواهر القناعة وفعلاً يستحق كل ريال. شكراً لكم على هذا الرقي في الاختيار."</p>
+                <span class="client-name">- سارة</span>
+            </div>
         </div>
-
-        <div class="perfume-card">
-            <img src="perfume.png.png" alt="عطر سلطان العود" class="perfume-img">
-            <h2 class="perfume-title">سلطان العود</h2>
-            <p class="price-tag">35,000 ر.ي</p>
-            <a href="https://wa.me/967778149873?text=أريد طلب عطر سلطان العود من متجر القناعة" onclick="addToCart()" class="order-button">اطلب عبر واتساب</a>
-        </div>
-
     </div>
 
     <footer>
@@ -158,13 +125,12 @@
     </footer>
 
     <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
-            alert("تمت إضافة العطر بنجاح!");
+        let c = 0;
+        function add() {
+            c++;
+            document.getElementById('count').innerText = c;
+            alert("تمت الإضافة للسلة! شكراً لثقتك بمتجر القناعة.");
         }
     </script>
-
 </body>
 </html>
