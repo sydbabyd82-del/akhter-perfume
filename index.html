@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر القناعة للعطور | تحطيم الأسعار</title>
+    <title>متجر القناعة | إضافة منتجات جديدة</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1">
     <style>
         :root {
             --gold: #d4af37;
-            --dark-bg: #0a0a0a;
-            --card-bg: #111111;
-            --text-gray: #b5b5b5;
-            --offer-red: #e74c3c;
+            --dark-bg: #050505;
+            --card-bg: #0f0f0f;
+            --offer-red: #ff4757;
         }
 
         body {
@@ -19,7 +18,16 @@
             color: white;
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            overflow-x: hidden;
+            padding: 0;
+        }
+
+        .urgent-bar {
+            background: var(--offer-red);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         header {
@@ -28,101 +36,104 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.95);
-            z-index: 1000;
+            background: rgba(0,0,0,0.9);
         }
 
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); }
-        .cart-status { background: var(--gold); color: black; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
 
         .container { padding: 40px 5%; }
-        .section-title { text-align: center; margin-bottom: 40px; color: var(--gold); font-size: 2.2rem; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--gold); font-size: 2rem; }
 
-        /* قسم العروض */
-        .offers-section {
-            background: linear-gradient(45deg, #0f0f0f, #1a1a1a);
-            padding: 50px 5%;
-            border-bottom: 2px solid var(--gold);
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
         }
 
-        .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { 
+            background: var(--card-bg); 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center; 
+            border: 1px solid #222; 
+            transition: 0.3s;
+        }
         
-        .offer-card {
-            background: #161616;
-            border: 2px dashed var(--gold);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .product-card img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: contain; 
+            margin-bottom: 15px; 
         }
 
-        /* تنسيق المنتجات */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background: var(--card-bg); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #1a1a1a; }
-        .product-card img { width: 100%; height: 250px; object-fit: contain; margin-bottom: 15px; }
-        
-        .old-price { text-decoration: line-through; color: var(--text-gray); font-size: 0.9rem; margin-left: 10px; }
-        .new-price { color: var(--gold); font-weight: bold; font-size: 1.3rem; }
+        .price-box { margin: 20px 0; }
+        .new-price { color: var(--gold); font-weight: bold; font-size: 1.5rem; }
 
-        .whatsapp-btn { display: block; border: 1px solid var(--gold); color: white; padding: 12px; text-decoration: none; border-radius: 5px; transition: 0.3s; margin-top: 15px; }
-        .whatsapp-btn:hover { background: var(--gold); color: black; font-weight: bold; }
+        .whatsapp-btn {
+            display: block;
+            background: #25d366;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: var(--text-gray); }
+        .whatsapp-btn:hover { background: #1ebe57; }
+
+        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
+    <div class="urgent-bar">🔥 وصلنا حديثاً: مُسك القناعة الفاخر - متوفر الآن 🔥</div>
+
     <header>
         <div class="logo">متجر القناعة</div>
-        <div class="cart-status">🛒 السلة: <span id="count">0</span></div>
+        <div style="color: var(--gold); font-weight: bold;">778149873</div>
     </header>
 
-    <div class="offers-section">
-        <h2 class="section-title">عروض خاصة وحصرية 🏷️</h2>
-        <div class="offers-grid">
-            <div class="offer-card">
-                <h3 style="color: var(--gold);">باكج "الفخامة الملكية"</h3>
-                <p>شيخ الشيوخ + سلطان العود</p>
-                <div style="margin: 20px 0;">
-                    <span class="old-price">55,000 ر.ي</span>
-                    <span class="new-price">45,000 ر.ي</span>
-                </div>
-                <a href="https://wa.me/967778149873?text=أريد طلب عرض باكج الفخامة بـ 45 ألف" onclick="add()" class="whatsapp-btn" style="background: var(--gold); color: black;">اطلب العرض</a>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
-        <h2 class="section-title">قائمة الأسعار الجديدة</h2>
+        
+        <h2 class="section-title">تشكيلة العطور الحالية</h2>
         <div class="products-grid">
+            
             <div class="product-card">
-                <img src="perfume.png.png" alt="عطر">
+                <img src="perfume.png.png" alt="شيخ الشيوخ">
                 <h3>شيخ الشيوخ</h3>
-                <p class="new-price">22,000 ر.ي</p>
-                <a href="https://wa.me/967778149873?text=طلب عطر شيخ الشيوخ بـ 22 ألف" onclick="add()" class="whatsapp-btn">اطلب عبر واتساب</a>
+                <div class="price-box">
+                    <span class="new-price">18,000 ر.ي</span>
+                </div>
+                <a href="https://wa.me/967778149873?text=طلب عطر شيخ الشيوخ بـ 18 ألف" class="whatsapp-btn">شراء عبر واتساب</a>
             </div>
+
             <div class="product-card">
-                <img src="perfume.png.png" alt="عطر">
+                <img src="perfume.png.png" alt="جواهر القناعة">
                 <h3>جواهر القناعة</h3>
-                <p class="new-price">28,000 ر.ي</p>
-                <a href="https://wa.me/967778149873?text=طلب عطر جواهر القناعة بـ 28 ألف" onclick="add()" class="whatsapp-btn">اطلب عبر واتساب</a>
+                <div class="price-box">
+                    <span class="new-price">23,000 ر.ي</span>
+                </div>
+                <a href="https://wa.me/967778149873?text=طلب عطر جواهر القناعة بـ 23 ألف" class="whatsapp-btn">شراء عبر واتساب</a>
             </div>
+
+            <div class="product-card" style="border-color: var(--gold);">
+                <img src="perfume.png.png" alt="مُسك القناعة">
+                <h3 style="color: var(--gold);">مُسك القناعة (جديد)</h3>
+                <div class="price-box">
+                    <span class="new-price">12,000 ر.ي</span>
+                </div>
+                <a href="https://wa.me/967778149873?text=أريد طلب المنتج الجديد: مُسك القناعة بـ 12 ألف" class="whatsapp-btn">اطلب الجديد الآن</a>
+            </div>
+
         </div>
     </div>
 
     <footer>
-        <p>© 2026 متجر القناعة للعطور | خدمة العملاء: 778149873</p>
+        <p>© 2026 متجر القناعة للعطور | تواصل معنا: 778149873</p>
     </footer>
 
-    <script>
-        let c = 0;
-        function add() {
-            c++;
-            document.getElementById('count').innerText = c;
-            alert("تم التحديث! سيتم التواصل معك عبر الرقم 778149873");
-        }
-    </script>
 </body>
 </html>
